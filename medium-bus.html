@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesona Transport Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+  body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+</style>
+
+<!-- Navigation -->
+<nav class="bg-red-800 text-white shadow-lg fixed top-0 left-0 w-full z-50">
+    <div class="container mx-auto px-6 py-2">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center relative"> <!-- tambah relative untuk overlay -->
+                <a href="medium-bus.html" class="block relative">
+                    <img src="assets/logo pesona white.png" alt="Pesona Transport Service logo" 
+                         class="h-10 cursor-pointer select-none pointer-events-none" draggable="false" />
+                    <!-- Overlay transparan untuk cegah klik kanan & save -->
+                    <div style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 10;"></div>
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="Index.html" class="hover:text-blue-300 transition-colors font-semibold">HOME</a>
+                <a href="About.html" class="hover:text-blue-300 transition-colors font-semibold">PROFILE</a>
+                <div class="relative group">
+                    <a href="#" class="hover:text-blue-300 transition-colors font-semibold cursor-pointer flex items-center">
+                        SERVICE
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" 
+                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute hidden group-hover:block bg-red-800 text-white mt-1 rounded shadow-lg">
+                        <a href="big-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">BIG BUS</a>
+                        <a href="medium-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">MEDIUM BUS</a>
+                    </div>
+                </div>
+                <a href="Reservasi.html" 
+                   class="bg-white text-red-800 font-semibold rounded-full px-5 py-1 hover:bg-red-100 transition-colors cursor-pointer">
+                   RESERVATION
+                </a>
+            </div>
+            <div class="md:hidden">
+                <button class="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Nonaktifkan klik kanan khusus pada gambar/logo
+    const logo = document.querySelector('a[href="Index.html"] img');
+    logo.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script>
+
+<!-- Gallery Section -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-extrabold text-red-800 mb-6 text-center">Medium Bus</h2>
+
+    <!-- Gambar 4 di bagian atas -->
+    <div class="grid grid-cols-4 gap-6 mb-10">
+      <div class="bus-card rounded-lg overflow-hidden cursor-pointer transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img src="assets/MEDIUM.png" alt="Bus Image 1" class="w-full h-48 object-cover"/>
+      </div>
+      <div class="bus-card rounded-lg overflow-hidden cursor-pointer transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img src="assets/medium bus1.jpg" alt="Bus Image 2" class="w-full h-48 object-cover"/>
+      </div>
+      <div class="bus-card rounded-lg overflow-hidden cursor-pointer transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img src="assets/Mediumbus P013.png" alt="Bus Image 3" class="w-full h-48 object-cover"/>
+      </div>
+      <div class="bus-card rounded-lg overflow-hidden cursor-pointer transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img src="assets/P013.jpg" alt="Bus Image 4" class="w-full h-48 object-cover"/>
+      </div>
+    </div>
+    <!-- Caption untuk gambar -->
+    <p id="caption" class="text-gray-600 mb-12 text-center">Exterior view of the Medium Bus.</p>
+       <!-- Gambar 4 di bagian atas -->
+    <div class="grid grid-cols-4 gap-6 mb-10">
+      <div class="bus-card rounded-lg overflow-hidden cursor-pointer transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img src="assets/interior medium/Medium_non legrest.png" alt="Bus Image 1" class="object-cover"/>
+      </div>
+      <div class="bus-card rounded-lg overflow-hidden cursor-pointer transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img src="assets/Interior medium/Medium_legrest.png" alt="Bus Image 2" class="object-cover"/>
+      </div>
+      <div class="bus-card rounded-lg overflow-hidden cursor-pointer transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img src="assets/interior medium/Medium_Audio.png" alt="Bus Image 3" class="object-cover"/>
+      </div>
+      <div class="bus-card rounded-lg overflow-hidden cursor-pointer transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img src="assets/interior medium/Medium_Coolbox.png" alt="Bus Image 4" class="object-cover"/>
+      </div>
+    </div>
+
+    <!-- Caption untuk gambar -->
+    <p id="caption" class="text-gray-600 mb-12 text-center">Interior view of the Medium Bus.</p>
+
+    <!-- Fasilitas di bawah gambar, 2 baris dalam grid 2 kolom -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 max-w-4xl mx-auto text-lg">
+      <ul class="list-disc list-inside space-y-3">
+        <li class="flex items-center">
+          <i class="fas fa-chair text-red-600 mr-2"></i> Maximal 35 Seat
+        </li>
+        <li class="flex items-center">
+          <i class="fas fa-mattress-pillow text-red-600 mr-2"></i> Bantal Selimut (only for long trip)
+        </li>
+        <li class="flex items-center">
+          <i class="fas fa-tv text-red-600 mr-2"></i> Multimedia System (Android TV)
+        </li>
+        <li class="flex items-center">
+          <i class="fas fa-microphone-alt text-red-600 mr-2"></i> Karaoke Sound System
+        </li>
+        <li class="flex items-center">
+          <i class="fas fa-plug text-red-600 mr-2"></i> USB Port & Power Outlet (only for handphone, not for camera/laptop/powerbank/other electronic devices)
+        </li>
+      </ul>
+      <ul class="list-disc list-inside space-y-3">
+        <li class="flex items-center">
+          <i class="fas fa-suitcase-rolling text-red-600 mr-2"></i> Large Capacity Luggage
+        </li>
+        <li class="flex items-center">
+          <i class="fas fa-box text-red-600 mr-2"></i> Coolbox
+        </li>
+        <li class="flex items-center">
+          <i class="fas fa-door-open text-red-600 mr-2"></i> 2-Point Emergency Exit Door
+        </li>
+        <li class="flex items-center">
+          <i class="fas fa-fire-extinguisher text-red-600 mr-2"></i> Fire Extinguisher
+        </li>
+        <li class="flex items-center">
+          <i class="fas fa-map-marked-alt text-red-600 mr-2"></i> GPS
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!--footer warna-->
+<footer class="bg-red-800 text-white py-12 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-12">
+
+   <!-- Logo Pesona -->
+<div class="flex flex-col items-center space-y-2">
+  <img 
+    src="assets/logo pesona white.png" 
+    alt="Logo Pesona" 
+    class="h-14 max-w-[150px] object-contain" 
+    draggable="false" 
+    oncontextmenu="return false;"
+    >
+    <p class="text-white text-center-sm">
+  <a href="https://maps.app.goo.gl/Z8XAS8D6L1nQaSPm6" target="_blank" rel="noopener noreferrer" class="hover:underline text-white">
+    Ngijo, Kec. Gn. Pati, Kota Semarang, Jawa Tengah
+  </a>
+</p>
+
+</div>
+    <!-- Information -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">INFORMATION</h3>
+      <ul class="space-y-3">
+        <li><a href="index.html" class="hover:underline text-white">Home</a></li>
+         <li><a href="" class="hover:underline text-white">Profile</a></li>
+        <li><a href="product.html" class="hover:underline text-white">Service</a></li>
+        <li><a href="reservasi.html" class="hover:underline text-white">Reservation</a></li>
+      </ul>
+    </div>
+
+    <!-- About Us -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">PROFILE</h3>
+      <ul class="space-y-3">
+        <li><a href="about-us.html" class="hover:underline text-white">About Pesona</a></li>
+      </ul>
+    </div>
+
+    <!-- Product -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">SERVICE</h3>
+      <ul class="space-y-3">
+        <li><a href="big-bus.html" class="hover:underline text-white">Bigbus</a></li>
+        <li><a href="medium-bus.html" class="hover:underline text-white">Medium Bus</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">SOCIAL MEDIA</h3>
+      <ul class="space-y-3">
+        <li class="flex items-center space-x-3">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/6285640014000" target="_blank" class="hover:underline text-white">0856-4001-4000</a>
+        </li>
+        <li class="flex items-center space-x-3">
+          <i class="fab fa-instagram"></i>
+          <a href="https://instagram.com/buspesona" target="_blank" class="hover:underline text-white">buspesona</a>
+        </li>
+        <li class="flex items-center space-x-3">
+            <i class="fab fa-youtube"></i>
+            <a href="https://www.youtube.com/@buspesona" target="_blank" class="hover:underline text-white">Bus Pesona</a>
+        </li>
+         <li class="flex items-center space-x-3">
+      <i class="fas fa-envelope"></i>
+      <span class="text-white">pesonatransportasi@gmail.com</span>
+    </li>
+      </ul>
+    </div>
+  </div>
+
+</footer>
+ <!-- Footer -->
+<footer class="bg-gray-900 text-white py-4">
+    <div class="container mx-auto px-6 text-center text-gray-400 text-sm">
+        <p>© 2025 Bus Pesona. All rights reserved.</p>
+    </div>
+</footer>
+
+ <!-- WhatsApp Float Button - Order Now! (Diperkecil dengan Efek Shadow) -->
+<a href="https://wa.me/6285640014000?text=Halo%20Pesona%20Transport%20Service%2C%20saya%20ingin%20order%20bus%20sekarang!" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-lg shadow-md z-50 transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-2xl flex items-center space-x-1 md:bottom-4 md:right-4 md:px-4 md:py-2 cursor-pointer"
+   title="Order Now via WhatsApp">
+  <i class="fab fa-whatsapp text-base md:text-lg"></i>
+  <span class="font-semibold text-xs md:text-sm hidden sm:inline">Order Now!</span>
+</a>
+
+
+</body>
+</html>

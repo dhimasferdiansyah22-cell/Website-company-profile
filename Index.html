@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesona Transport Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link ke file CSS -->
+    <style>
+ body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+</style>
+
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Konten HTML Anda di sini -->
+    <script src="scripts.js"></script> <!-- Link ke file JavaScript -->
+</body>
+
+<!-- Navigation -->
+<nav class="bg-red-800 text-white shadow-lg fixed top-0 left-0 w-full z-50">
+    <div class="container mx-auto px-6 py-2"> <!-- Padding vertical dikurangi dari py-3 ke py-2 -->
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="Index.html">
+                    <img src="assets/logo pesona white.png" alt="Pesona Transport Service logo" class="h-10 cursor-pointer" /> <!-- ukuran logo sedikit diperkecil juga -->
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center"> <!-- menambahkan items-center agar label sejajar tengah -->
+                <a href="Index.html" class="hover:text-blue-300 transition-colors font-semibold">HOME</a>
+                <a href="About.html" class="hover:text-blue-300 transition-colors font-semibold">PROFILE</a>
+                <!-- Bagian menu PRODUCT dengan dropdown -->
+<div class="relative group">
+    <a href="#" class="hover:text-blue-300 transition-colors font-semibold cursor-pointer flex items-center">
+        SERVICE
+        <!-- Icon dropdown small -->
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+        </svg>
+    </a>
+    <!-- Dropdown menu -->
+    <div class="absolute hidden group-hover:block bg-red-800 text-white mt-1 rounded shadow-lg">
+        <a href="big-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">BIG BUS</a>
+        <a href="medium-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">MEDIUM BUS</a>
+    </div>
+</div>
+                <a href="Reservasi.html" 
+                   class="bg-white text-red-800 font-semibold rounded-full px-5 py-1 hover:bg-red-100 transition-colors cursor-pointer">
+                   RESERVATION
+                </a>
+            </div>
+            <div class="md:hidden">
+                <button class="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Nonaktifkan klik kanan khusus pada gambar/logo
+    const logo = document.querySelector('a[href="Index.html"] img');
+    logo.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script>
+<!-- Hero Section -->
+<section id="home" class="hero-section text-white py-32 md:py-40 min-h-screen bg-cover bg-center" style="background-image: url('assets/crew\ update.png');">
+    <div class="container mx-auto px-6 text-center flex flex-col justify-center items-center">
+        <p class="text-3xl md:text-5xl font-bold mb-8 leading-tight text-center max-w-4xl">
+            PESONA TRANSPORT SERVICE
+        </p>
+        <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-center">
+            Melayani segala jenis perjalanan wisata, ziarah, study tour, dan berbagai keperluan perjalanan lainnya.
+            Sesuai dengan motto kami 100% commitment to zero accident, kami akan selalu berkomitmen untuk memberikan pelayanan yang terbaik kepada pelanggan kami. 
+        </p>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="About Us" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-red-800 mb-4">TENTANG KAMI</h2>
+            <div class="w-20 h-1 bg-red-800 mx-auto"></div>
+        </div>
+        
+   <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div>
+        <video 
+            class="rounded-lg shadow-xl w-full h-auto" 
+            autoplay 
+            playsinline 
+            loop 
+            controls 
+            controlslist="nodownload nofullscreen noremoteplayback" 
+            disablepictureinpicture
+            oncontextmenu="return false;"
+        >
+            <source src="assets/RESERVASI.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div>
+
+                <h3 class="text-2xl font-bold text-red-800 mb-6">Mengapa Memilih Bus Pesona?</h3>
+                <p class="text-gray-600 mb-6" style="text-align: justify;">
+                    Sejak tahun 2020, Bus Pesona menjadi pilihan utama untuk layanan sewa bus pariwisata di wilayah Jawa Tengah dan sekitarnya. 
+                    100% zero accident commitment merupakan motivasi tertinggi kami dari sebuah pelayanan.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-shield-alt text-white-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-800">Safety First</h4>
+                            <p class="text-gray-600">Setiap perjalanan kami awali dengan pemeriksaan armada secara detail.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-id-card text-white-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-800">Kru Berpengalaman</h4>
+                            <p class="text-gray-600">Pengemudi & kru kami bersertifikat, mengutamakan keamanan penumpang.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-star text-white-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-800">100% Zero Accident Commitment</h4>
+                            <p class="text-gray-600">Perjalanan lebih tenang dan nyaman bersama Pesona Transport Service.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-phone text-white-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-red-800">Booking lebih mudah dan cepat</h4>
+                            <p class="text-gray-600">Pemesanan lebih mudah, cepat dan praktis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Gallery Section -->
+    <section id="Product" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-red-800 mb-4">LAYANAN KAMI</h2>
+                <p class="text-gray-600">Pesona Transport Service menyediakan transportasi sewa bus pariwisata Big Bus dan Medium Bus</p>
+                <p class="text-gray-600">Menggunakan body Legacy Sky SR3 Laksana keluaran tahun terbaru dengan menggunakan sasis Hino & Mercedes-Benz.</p>
+                <p class="text-gray-600">Kami melayani untuk overland Jawa – Bali, Ziarah Wali, Study Tour, dan City Tour.</p>
+                <div class="w-20 h-1 bg-red-800 mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+<!-- Bus 1 -->
+<div class="bus-card bg-white rounded-lg shadow-md overflow-hidden">
+    <div class="bus-image">
+        <a href="big-bus.html">
+            <img src="assets/SR3 Pano.png" 
+            class="w-full h-48 object-cover"
+            draggable="false" 
+            oncontextmenu="return false;">
+        </a>
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-red-800 mb-2">Big Bus</h3>
+        <p class="text-gray-600 mb-4">Kapasitas maksimal 50 penumpang, reclining seat, dispenser, dan entertainment system</p>
+        <div class="flex justify-between items-center">
+        </div>
+    </div>
+</div>
+
+<!-- Bus 3 -->
+<div class="bus-card bg-white rounded-lg shadow-md overflow-hidden">
+    <div class="bus-image">
+        <a href="medium-bus.html">
+            <img src="assets/MEDIUM.png" class="w-full h-48 object-cover" draggable="false" oncontextmenu="return false;">
+        </a>
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-red-800 mb-2">Medium Bus</h3>
+        <p class="text-gray-600 mb-4">Kapasitas maksimal 35 penumpang dengan reclining seat, dan entertainment system</p>        
+        </div>
+    </div>
+</div>
+    </section>
+
+<!-- Testimoni Section -->
+<section id="Testimonials" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-red-800 mb-2">TESTIMONI</h2>
+      <p class="text-gray-600">Apa kata pelanggan tentang layanan kami</p>
+      <div class="w-16 h-1 bg-red-800 mx-auto mt-3"></div>
+    </div>
+
+    <!-- Container grid 3 kolom rapat -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <!-- Testimoni 1 -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-300 flex flex-col shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-xl">
+        <p class="text-gray-700 italic mb-2">"Nyaman banget, AC dingin, audionya bagus, suspensinya empuk, pas dijalan tanjakan terasa enteng"</p>
+        <h3 class="text-md font-semibold text-red-800 mt-auto">– Safira Amelia</h3> <!-- mt-auto untuk dorong ke bawah -->
+      </div>
+      <!-- Testimoni 2 -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-300 flex flex-col shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-xl">
+        <p class="text-gray-700 italic mb-2">"Kesan menggunakan PO. Pesona pelayanan sangat memuaskan, awak kabin sangat ramah, bus nyaman dan selalu bersih. Pesan PO. Pesona agar mempertahankan pelayanan dan kualitas armadanya"</p>
+        <h3 class="text-md font-semibold text-red-800 mt-auto">– Nursidik</h3>
+      </div>
+      <!-- Testimoni 3 -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-300 flex flex-col shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-xl">
+        <p class="text-gray-700 italic mb-2">"Sangat puas,tim marketing yang komunikatif menjelaskan semuanya secara detail. Crew bus baik dan bisa diajak kerjasama"</p>
+        <h3 class="text-md font-semibold text-red-800 mt-auto">– Evi Sussanti</h3>
+      </div>
+      <!-- Testimoni 4 -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-300 flex flex-col shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-xl">
+        <p class="text-gray-700 italic mb-2">"Alhamdulillah pelayanan awak kabin sangat memuaskan, ramah, sabar dan busnya nyaman, semoga bisa dipertahankan pelayanannya"</p>
+        <h3 class="text-md font-semibold text-red-800 mt-auto">– Amanda</h3>
+      </div>
+      <!-- Testimoni 5 -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-300 flex flex-col shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-xl">
+        <p class="text-gray-700 italic mb-2">"Kami merasa puas dengan pelayanannya. Semoga Pesona tetap bisa menjaga kualitas crew dan armadanya"</p>
+        <h3 class="text-md font-semibold text-red-800 mt-auto">– Akmal</h3>
+      </div>
+      <!-- Testimoni 6 -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-300 flex flex-col shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-xl">
+        <p class="text-gray-700 italic mb-2">"Unit nyaman, crew ramah, staff marketing fast respon dan siap membantu segala jenis keinginan customer"</p>
+        <h3 class="text-md font-semibold text-red-800 mt-auto">– Rafi Ezzatya</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Footer-->
+<footer class="bg-red-800 text-white py-12 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-12">
+    
+   <!-- Logo Pesona -->
+<div class="flex flex-col items-center space-y-2">
+  <img 
+    src="assets/logo pesona white.png" 
+    alt="Logo Pesona" 
+    class="h-14 max-w-[150px] object-contain" 
+    draggable="false" 
+    oncontextmenu="return false;"
+    >
+    <p class="text-white text-center-sm">
+  <a href="https://maps.app.goo.gl/Z8XAS8D6L1nQaSPm6" target="_blank" rel="noopener noreferrer" class="hover:underline text-white">
+    Ngijo, Kec. Gn. Pati, Kota Semarang, Jawa Tengah
+  </a>
+</p>
+
+</div>
+    <!-- Information -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">INFORMATION</h3>
+      <ul class="space-y-3">
+        <li><a href="index.html" class="hover:underline text-white">Home</a></li>
+        <li><a href="about.html" class="hover:underline text-white">Profile</a></li>
+        <li><a href="product.html" class="hover:underline text-white">Service</a></li>
+        <li><a href="reservasi.html" class="hover:underline text-white">Reservation</a></li>
+      </ul>
+    </div>
+
+    <!-- About Us -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">PRFOILE</h3>
+      <ul class="space-y-3">
+        <li><a href="about.html" class="hover:underline text-white">About Pesona</a></li>
+      </ul>
+    </div>
+
+    <!-- Product -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">SERVICE</h3>
+      <ul class="space-y-3">
+        <li><a href="big-bus.html" class="hover:underline text-white">Bigbus</a></li>
+        <li><a href="medium-bus.html" class="hover:underline text-white">Medium Bus</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">SOCIAL MEDIA</h3>
+      <ul class="space-y-3">
+        <li class="flex items-center space-x-3">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/6285640014000" target="_blank" class="hover:underline text-white">0856-4001-4000</a>
+        </li>
+        <li class="flex items-center space-x-3">
+          <i class="fab fa-instagram"></i>
+          <a href="https://instagram.com/buspesona" target="_blank" class="hover:underline text-white">buspesona</a>
+        </li>
+        <li class="flex items-center space-x-3">
+            <i class="fab fa-youtube"></i>
+            <a href="https://www.youtube.com/@buspesona" target="_blank" class="hover:underline text-white">Bus Pesona</a>
+        </li>
+         <li class="flex items-center space-x-3">
+      <i class="fas fa-envelope"></i>
+      <span class="text-white">pesonatransportasi@gmail.com</span>
+    </li>
+      </ul>
+    </div>
+  </div>
+
+</footer>
+ <!-- Footer -->
+<footer class="bg-gray-900 text-white py-4">
+    <div class="container mx-auto px-6 text-center text-gray-400 text-sm">
+        <p>© 2025 Bus Pesona. All rights reserved.</p>
+    </div>
+</footer>
+
+ <!-- WhatsApp Float Button - Order Now! (Diperkecil dengan Efek Shadow) -->
+<a href="https://wa.me/6285640014000?text=Halo%20Pesona%20Transport%20Service%2C%20saya%20ingin%20order%20bus%20sekarang!" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-lg shadow-md z-50 transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-2xl flex items-center space-x-1 md:bottom-4 md:right-4 md:px-4 md:py-2 cursor-pointer"
+   title="Order Now via WhatsApp">
+  <i class="fab fa-whatsapp text-base md:text-lg"></i>
+  <span class="font-semibold text-xs md:text-sm hidden sm:inline">Order Now!</span>
+</a>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const navLinks = document.querySelector('.hidden.md\\:flex');
+        mobileMenuButton?.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-16');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('w-full');
+            navLinks.classList.toggle('bg-red-800');
+            navLinks.classList.toggle('p-4');
+            navLinks.classList.toggle('space-y-4');
+        });
+    </script>
+</body>
+</html>
+

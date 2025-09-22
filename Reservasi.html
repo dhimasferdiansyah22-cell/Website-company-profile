@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pesona Transport Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+  body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+</style>
+
+<!-- Navigation -->
+<nav class="bg-red-800 text-white shadow-lg fixed top-0 left-0 w-full z-50">
+    <div class="container mx-auto px-6 py-2">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center relative"> <!-- tambah relative untuk overlay -->
+                <a href="Reservasi.html" class="block relative">
+                    <img src="assets/logo pesona white.png" alt="Pesona Transport Service logo" 
+                         class="h-10 cursor-pointer select-none pointer-events-none" draggable="false" />
+                    <!-- Overlay transparan untuk cegah klik kanan & save -->
+                    <div style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 10;"></div>
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="Index.html" class="hover:text-blue-300 transition-colors font-semibold">HOME</a>
+                <a href="About.html" class="hover:text-blue-300 transition-colors font-semibold">PROFILE</a>
+                <div class="relative group">
+                    <a href="#" class="hover:text-blue-300 transition-colors font-semibold cursor-pointer flex items-center">
+                        SERVICE
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" 
+                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute hidden group-hover:block bg-red-800 text-white mt-1 rounded shadow-lg">
+                        <a href="big-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">BIG BUS</a>
+                        <a href="medium-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">MEDIUM BUS</a>
+                    </div>
+                </div>
+                <a href="Reservasi.html" 
+                   class="bg-white text-red-800 font-semibold rounded-full px-5 py-1 hover:bg-red-100 transition-colors cursor-pointer">
+                   RESERVATION
+                </a>
+            </div>
+            <div class="md:hidden">
+                <button class="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Nonaktifkan klik kanan khusus pada gambar/logo
+    const logo = document.querySelector('a[href="Index.html"] img');
+    logo.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script>
+
+<!-- Kontak & Form Reservasi -->
+<section id="kontak" class="py-20 bg-grey text-black">
+  <div class="container mx-auto px-6 max-w-lg">
+    <h2 class="text-3xl font-bold mb-8 text-center">FORMULIR PEMESANAN</h2>
+    <p class="text-gray-600">Silahkan isi dengan lengkap form dibawah ini!</p>
+    <form id="contactForm" class="space-y-6" onsubmit="return submitForm(event)" novalidate>
+      <div>
+        <label for="nama" class="block mb-2 font-semibold">Nama</label>
+        <input type="text" id="nama" name="nama" required 
+               class="w-full p-2 rounded text-black border border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500" />
+      </div>
+      <div>
+        <label for="nomor" class="block mb-2 font-semibold">Nomor Telepon</label>
+        <input type="text" id="nomor" name="nomor" pattern="\d*" inputmode="numeric" 
+               class="w-full p-2 rounded text-black border border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500" />
+      </div>
+      <div>
+        <label for="kebutuhanBus" class="block mb-2 font-semibold">kebutuhan</label>
+        <select id="kebutuhanBus" name="kebutuhanBus" required
+                class="w-full p-2 rounded text-black border border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500">
+          <option value="" disabled selected>Pilih jenis bus</option>
+          <option value="Bigbus">Big Bus</option>
+          <option value="Medium Bus">Medium Bus</option>
+        </select>
+      </div>
+      <div>
+        <label for="tanggalAwal" class="block mb-2 font-semibold">Tanggal Mulai</label>
+        <input type="date" id="tanggalAwal" name="tanggalAwal" required 
+               class="w-full p-2 rounded text-black border border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500" />
+      </div>
+      <div>
+        <label for="tanggalSelesai" class="block mb-2 font-semibold">Tanggal Selesai</label>
+        <input type="date" id="tanggalSelesai" name="tanggalSelesai" required 
+               class="w-full p-2 rounded text-black border border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500" />
+      </div>
+      <div>
+        <label for="penjemputan" class="block mb-2 font-semibold">Penjemputan</label>
+        <input type="text" id="penjemputan" name="penjemputan" required 
+               class="w-full p-2 rounded text-black border border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500" />
+      </div>
+      <div>
+        <label for="tujuan" class="block mb-2 font-semibold">Tujuan</label>
+        <input type="text" id="tujuan" name="tujuan" required 
+               class="w-full p-2 rounded text-black border border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500" />
+      </div>
+      <button type="submit" class="bg-red-500 hover:bg-red-600 px-6 py-3 rounded font-semibold w-full text-white">Submit</button>
+    </form>
+  </div>
+</section>
+
+<footer class="bg-red-800 text-white py-12 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-12">
+    
+   <!-- Logo Pesona -->
+<div class="flex flex-col items-center space-y-2">
+  <img 
+    src="assets/logo pesona white.png" 
+    alt="Logo Pesona" 
+    class="h-14 max-w-[150px] object-contain" 
+    draggable="false" 
+    oncontextmenu="return false;"
+    >
+    <p class="text-white text-center-sm">
+  <a href="https://maps.app.goo.gl/Z8XAS8D6L1nQaSPm6" target="_blank" rel="noopener noreferrer" class="hover:underline text-white">
+    Ngijo, Kec. Gn. Pati, Kota Semarang, Jawa Tengah
+  </a>
+</p>
+
+</div>
+    <!-- Information -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">INFORMATION</h3>
+      <ul class="space-y-3">
+        <li><a href="index.html" class="hover:underline text-white">Home</a></li>
+        <li><a href="about.html" class="hover:underline text-white">Profile</a></li>
+        <li><a href="product.html" class="hover:underline text-white">Service</a></li>
+        <li><a href="reservasi.html" class="hover:underline text-white">Reservation</a></li>
+      </ul>
+    </div>
+
+    <!-- About Us -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">PROFILE</h3>
+      <ul class="space-y-3">
+        <li><a href="about.html" class="hover:underline text-white">About Pesona?</a></li>
+      </ul>
+    </div>
+
+    <!-- Product -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">SERVICE</h3>
+      <ul class="space-y-3">
+        <li><a href="big-bus.html" class="hover:underline text-white">Bigbus</a></li>
+        <li><a href="medium-bus.html" class="hover:underline text-white">Medium Bus</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">SOCIAL MEDIA</h3>
+      <ul class="space-y-3">
+        <li class="flex items-center space-x-3">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/6285640014000" target="_blank" class="hover:underline text-white">0856-4001-4000</a>
+        </li>
+        <li class="flex items-center space-x-3">
+          <i class="fab fa-instagram"></i>
+          <a href="https://instagram.com/buspesona" target="_blank" class="hover:underline text-white">buspesona</a>
+        </li>
+        <li class="flex items-center space-x-3">
+            <i class="fab fa-youtube"></i>
+            <a href="https://www.youtube.com/@buspesona" target="_blank" class="hover:underline text-white">Bus Pesona</a>
+        </li>
+         <li class="flex items-center space-x-3">
+      <i class="fas fa-envelope"></i>
+      <span class="text-white">pesonatransportasi@gmail.com</span>
+    </li>
+      </ul>
+    </div>
+  </div>
+
+  
+
+</footer>
+ <!-- Footer -->
+<footer class="bg-gray-900 text-white py-4">
+    <div class="container mx-auto px-6 text-center text-gray-400 text-sm">
+        <p>© 2025 Bus Pesona. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+function formatDateToDDMMYYYY(dateString) {
+  const parts = dateString.split('-'); // ["YYYY", "MM", "DD"]
+  if(parts.length !== 3) return dateString; // fallback jika format tidak sesuai
+  return `${parts[2]}/${parts[1]}/${parts[0]}`; // DD/MM/YYYY
+}
+
+function submitForm(event) {
+  event.preventDefault();
+
+  const nama = document.getElementById('nama').value.trim();
+  const nomor = document.getElementById('nomor').value.trim();
+  const kebutuhanBus = document.getElementById('kebutuhanBus').value;
+  const tanggalAwalRaw = document.getElementById('tanggalAwal').value;
+  const tanggalSelesaiRaw = document.getElementById('tanggalSelesai').value;
+  const penjemputan = document.getElementById('penjemputan').value.trim();
+  const tujuan = document.getElementById('tujuan').value.trim();
+
+  if (!nama || !nomor || !kebutuhanBus || !tanggalAwalRaw || !tanggalSelesaiRaw || !penjemputan || !tujuan) {
+    alert('Mohon isi semua field dengan lengkap!');
+    return false;
+  }
+
+  // Ubah format tanggal ke DD/MM/YYYY
+  const tanggalAwal = formatDateToDDMMYYYY(tanggalAwalRaw);
+  const tanggalSelesai = formatDateToDDMMYYYY(tanggalSelesaiRaw);
+
+  const pesan = 
+`*Formulir Pemesanan Bus*%0A
+*Nama:* ${encodeURIComponent(nama)}%0A
+*Nomor Telepon:* ${encodeURIComponent(nomor)}%0A
+*Kebutuhan Bus:* ${encodeURIComponent(kebutuhanBus)}%0A
+*Tanggal Mulai:* ${encodeURIComponent(tanggalAwal)}%0A
+*Tanggal Selesai:* ${encodeURIComponent(tanggalSelesai)}%0A
+*Penjemputan:* ${encodeURIComponent(penjemputan)}%0A
+*Tujuan:* ${encodeURIComponent(tujuan)}`;
+
+  const waNumber = '6285640014000';
+  const waUrl = `https://wa.me/${waNumber}?text=${pesan}`;
+  window.open(waUrl, '_blank');
+
+  return false;
+}
+
+  // Mobile menu toggle (sesuai header Anda)
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const navLinks = document.querySelector('.hidden.md\\:flex');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    navLinks.classList.toggle('hidden');
+    navLinks.classList.toggle('flex');
+    navLinks.classList.toggle('flex-col');
+    navLinks.classList.toggle('absolute');
+    navLinks.classList.toggle('top-16');
+    navLinks.classList.toggle('left-0');
+    navLinks.classList.toggle('w-full');
+    navLinks.classList.toggle('bg-red-800');
+    navLinks.classList.toggle('p-4');
+    navLinks.classList.toggle('space-y-4');
+  });
+</script>
+
+</body>
+</html>

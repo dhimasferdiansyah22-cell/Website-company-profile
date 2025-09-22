@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pesona Transport Service</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+ body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ }
+ 
+</style>  
+</head>
+
+<body class="bg-white text-gray-900">
+<!-- Navigation -->
+<nav class="bg-red-800 text-white shadow-lg fixed top-0 left-0 w-full z-50">
+    <div class="container mx-auto px-6 py-2">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center relative"> <!-- tambah relative untuk overlay -->
+                <a href="about.html" class="block relative">
+                    <img src="assets/logo pesona white.png" alt="Pesona Transport Service logo" 
+                         class="h-10 cursor-pointer select-none pointer-events-none" draggable="false" />
+                    <!-- Overlay transparan untuk cegah klik kanan & save -->
+                    <div style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 10;"></div>
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="Index.html" class="hover:text-blue-300 transition-colors font-semibold">HOME</a>
+                <a href="About.html" class="hover:text-blue-300 transition-colors font-semibold">PROFILE</a>
+                <div class="relative group">
+                    <a href="#" class="hover:text-blue-300 transition-colors font-semibold cursor-pointer flex items-center">
+                        SERVICE
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" 
+                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <div class="absolute hidden group-hover:block bg-red-800 text-white mt-1 rounded shadow-lg">
+                        <a href="big-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">BIG BUS</a>
+                        <a href="medium-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">MEDIUM BUS</a>
+                    </div>
+                </div>
+                <a href="Reservasi.html" 
+                   class="bg-white text-red-800 font-semibold rounded-full px-5 py-1 hover:bg-red-100 transition-colors cursor-pointer">
+                   RESERVATION
+                </a>
+            </div>
+            <div class="md:hidden">
+                <button class="mobile-menu-button">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- About Bus Pesona Section -->
+<section id="about-bus-pesona" class="py-16 bg-white font-sans">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-red-800 mb-2">ABOUT BUS PESONA</h2>
+      <div class="w-20 h-1 bg-red-800 mx-auto rounded-full"></div>
+    </div>
+    <div class="max-w-4xl mx-auto text-gray-700 text-justify space-y-4 leading-relaxed">
+      <p>
+        Pesona Transport Service hadir untuk memberikan pengalaman perjalanan yang aman, nyaman, dan tentunya berkesan. Cerita ini kami mulai pada tahun 2020 dengan branding "Mas Wahid". 
+        Modal awal adalah dua unit bus bekas yang kami rekondisi menjadi body Jetbus 3 di salah satu body repair yang ada di Bogor dan Malang, dengan mesin Hino RK8 - R260 dan Mercedes-Benz OH1626.
+        Dari dua bus itu langkah kecil kami dimulai. Seiring dengan berjalannya waktu kepercayaan pelanggan pun perlahan mulai tumbuh. Hingga pada tahun 2021, brand "Mas Wahid" resmi bertransformasi menjadi "Pesona Transport Service". 
+        Kami memperkenalkan identitas baru dengan warna dasar putih yang dipadukan garis red-orange dan silver, membentuk siluet elang yang kini menjadi ciri khas bus-bus kami.
+        Kini, perjalanan kami terus berkembang dari yang awalnya hanya dua armada, sekarang kami sudah mengoperasikan 12 unit bus (9 bus besar dan 3 bus medium) dengan 12 pengemudi yang handal dan profesional. 
+        Kami melayani rental bus dengan kapasitas mulai dari 35 hingga 50 seat. Semua unit kami mayoritas menggunakan body Laksana Legacy SR2 & SR3 dengan dukungan mesin dari Hino dan Mercedes-Benz untuk menunjang kenyamanan, dan kepuasan pelanggan, karena 
+        prinsip kami sedari awal mengutamakan keselamatan dan kenyamanan perjalanan Anda 100% Commitment for Zero Accident.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Visi Misi Section -->
+<section id="visi-misi" class="py-24 bg-gray-100 font-sans">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-red-800 mb-2">VISI & MISI</h2>
+      <div class="w-20 h-1 bg-red-800 mx-auto rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto text-gray-700 leading-relaxed">
+      <!-- Visi -->
+      <div>
+        <h3 class="text-2xl font-extrabold text-red-800 mb-4 text-left">VISI</h3>
+        <p class="text-left">
+          Memberikan pelayanan terbaik dan 100% commitment to zero accidents dalam menyediakan sarana transportasi untuk pariwisata di Indonesia.
+        </p>
+      </div>
+      <!-- Misi -->
+      <div>
+        <h3 class="text-2xl font-extrabold text-red-800 mb-4 text-left">MISI</h3>
+        <ol class="list-decimal list-inside space-y-2 text-left">
+          <li>Mengutamakan keamanan unit</li>
+          <li>Mengutamakan kemanan dan kenyamanan pelanggan</li>
+          <li>Membangun sumber daya manusia yang profesional dan bertanggung jawab</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Filosofi Elang -->
+<section id="mengapa-elang" class="py-16 bg-white font-sans">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-red-800 mb-2">Mengapa Elang?</h2>
+      <div class="w-20 h-1 bg-red-800 mx-auto rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto items-center">
+      <!-- Gambar di kiri, justify-center dan margin kanan negatif -->
+      <div class="flex justify-center md:justify-center md:mr-[-1rem]">
+        <img 
+          src="assets/filosofi.jpg" 
+          alt="Filosofi Elang" 
+          class="w-72 h-72 rounded-lg shadow-2xl object-contain"
+          draggable="false"
+          oncontextmenu="return false;"
+        >
+      </div>
+      <!-- Teks di kanan, padding kiri kecil dan margin kiri positif -->
+      <div class="text-gray-700 leading-relaxed text-justify md:pl-2 md:ml-4">
+        <p>
+          Burung elang dipilih sebagai elemen dalam desain livery ini karena elang merupakan hewan yang dikenal sebagai lambang kekuatan, ketajaman, optimisme, dan memiliki visi yang jauh lebih ke depan.
+        </p>
+        <p class="mt-4">
+          Filosofi elang ini mencerminkan semangat kami dalam memberikan pelayanan transportasi yang aman, handal, dan penuh komitmen. Seperti elang yang selalu waspada dan fokus, kami berkomitmen untuk menjaga keselamatan, memberi pelayanan, dan kenyamanan setiap perjalanan pelanggan kami dengan dedikasi tinggi.
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- History Unit Section -->
+<section id="history-unit" class="py-16 bg-gray-100 font-sans">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-red-800 mb-2">HISTORY UNIT</h2>
+      <div class="w-20 h-1 bg-red-800 mx-auto rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-6xl mx-auto">
+      <div class="text-center bus-card rounded-lg overflow-hidden transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img 
+          src="assets/unit Perintis.jpg" 
+          alt="Unit Perintis (2020)" 
+          class="rounded-lg shadow-sm mx-auto max-w-full"
+          oncontextmenu="return false;" 
+          draggable="false"
+          ondragstart="return false;"
+        >
+        <p class="mt-1 text-gray-600 text-sm">Unit Perintis (2020)</p>
+      </div>
+      <div class="text-center bus-card rounded-lg overflow-hidden transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img 
+          src="assetS/Pesona hijau.jpg" 
+          alt="P003 Penjelajah (2021)" 
+          class="rounded-lg shadow-sm mx-auto max-w-full"
+          oncontextmenu="return false;" 
+          draggable="false"
+          ondragstart="return false;"
+        >
+        <p class="mt-1 text-gray-600 text-sm">P003 "Penjelajah" (2021)</p>
+      </div>
+      <div class="text-center bus-card rounded-lg overflow-hidden transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img 
+          src="assets/P Blue.jpg" 
+          alt="P004 Cavalry (2021)" 
+          class="rounded-lg mx-auto max-w-full"
+          oncontextmenu="return false;" 
+          draggable="false"
+          ondragstart="return false;"
+        >
+        <p class="mt-1 text-gray-600 text-sm">P004 "Cavalry" (2021)</p>
+      </div>
+      <div class="text-center bus-card rounded-lg overflow-hidden transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img 
+          src="assets/Marcopolo.png" 
+          alt="P005 Marcopolo (2022)" 
+          class="rounded-lg shadow-sm mx-auto max-w-full"
+          oncontextmenu="return false;" 
+          draggable="false"
+          ondragstart="return false;"
+        >
+        <p class="mt-1 text-gray-600 text-sm">P005 "Marcopolo" (2022)</p>
+      </div>
+      <div class="text-center bus-card rounded-lg overflow-hidden transition-shadow shadow-sm hover:shadow-lg hover:-translate-y-1">
+        <img 
+          src="assets/poo5.png" 
+          alt="P006 - P007 (2022)" 
+          class="rounded-lg shadow-sm mx-auto max-w-full"
+          oncontextmenu="return false;" 
+          draggable="false"
+          ondragstart="return false;"
+        >
+        <p class="mt-1 text-gray-600 text-sm">P006 - P007 (2022)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Footer-->
+<footer class="bg-red-800 text-white py-12 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-12">
+    
+   <!-- Logo Pesona -->
+<div class="flex flex-col items-center space-y-2">
+    <img 
+    src="assets/logo pesona white.png" 
+    alt="Logo Pesona" 
+    class="h-14 max-w-[150px] object-contain" 
+    draggable="false" 
+    oncontextmenu="return false;"
+  > 
+  <p class="text-white text-center-sm">
+  <a href="https://maps.app.goo.gl/Z8XAS8D6L1nQaSPm6" target="_blank" rel="noopener noreferrer" class="hover:underline text-white">
+    Ngijo, Kec. Gn. Pati, Kota Semarang, Jawa Tengah
+  </a>
+</p>
+
+</div>
+    <!-- Information -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">INFORMATION</h3>
+      <ul class="space-y-3">
+        <li><a href="index.html" class="hover:underline text-white">Home</a></li>
+        <li><a href="about.html" class="hover:underline text-white">Profile</a></li>
+        <li><a href="product.html" class="hover:underline text-white">Service</a></li>
+        <li><a href="reservasi.html" class="hover:underline text-white">Reservation</a></li>
+      </ul>
+    </div>
+
+    <!-- About Us -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">PROFILE</h3>
+      <ul class="space-y-3">
+        <li><a href="about.html" class="hover:underline text-white">About Pesona</a></li>
+      </ul>
+    </div>
+
+    <!-- Product -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">SERVICE</h3>
+      <ul class="space-y-3">
+        <li><a href="big-bus.html" class="hover:underline text-white">Bigbus</a></li>
+        <li><a href="medium-bus.html" class="hover:underline text-white">Medium Bus</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h3 class="text-xl font-bold mb-6">SOCIAL MEDIA</h3>
+      <ul class="space-y-3">
+        <li class="flex items-center space-x-3">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/6285640014000" target="_blank" class="hover:underline text-white">0856-4001-4000</a>
+        </li>
+        <li class="flex items-center space-x-3">
+          <i class="fab fa-instagram"></i>
+          <a href="https://instagram.com/buspesona" target="_blank" class="hover:underline text-white">buspesona</a>
+        </li>
+        <li class="flex items-center space-x-3">
+            <i class="fab fa-youtube"></i>
+            <a href="https://www.youtube.com/@buspesona" target="_blank" class="hover:underline text-white">Bus Pesona</a>
+        </li>
+        <li class="flex items-center space-x-3">
+      <i class="fas fa-envelope"></i>
+      <span class="text-white">pesonatransportasi@gmail.com</span>
+    </li>
+      </ul>
+    </div>
+  </div>
+
+</footer>
+ <!-- Footer -->
+<footer class="bg-gray-900 text-white py-4">
+    <div class="container mx-auto px-6 text-center text-gray-400 text-sm">
+        <p>© 2025 Bus Pesona. All rights reserved.</p>
+    </div>
+</footer>
+
+   <!-- WhatsApp Float Button - Order Now! (Diperkecil dengan Efek Shadow) -->
+<a href="https://wa.me/6285640014000?text=Halo%20Pesona%20Transport%20Service%2C%20saya%20ingin%20order%20bus%20sekarang!" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-lg shadow-md z-50 transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-2xl flex items-center space-x-1 md:bottom-4 md:right-4 md:px-4 md:py-2 cursor-pointer"
+   title="Order Now via WhatsApp">
+  <i class="fab fa-whatsapp text-base md:text-lg"></i>
+  <span class="font-semibold text-xs md:text-sm hidden sm:inline">Order Now!</span>
+</a>
+  
+</body>
+</html>
