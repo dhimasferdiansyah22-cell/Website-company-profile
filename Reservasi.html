@@ -18,45 +18,132 @@
 
 <!-- Navigation -->
 <nav class="bg-red-800 text-white shadow-lg fixed top-0 left-0 w-full z-50">
-    <div class="container mx-auto px-6 py-2">
+    <div class="container mx-auto px-6 py-2"> <!-- Padding vertical dikurangi dari py-3 ke py-2 -->
         <div class="flex justify-between items-center">
-            <div class="flex items-center relative"> <!-- tambah relative untuk overlay -->
-                <a href="Reservasi.html" class="block relative">
-                    <img src="assets/logo pesona white.png" alt="Pesona Transport Service logo" 
-                         class="h-10 cursor-pointer select-none pointer-events-none" draggable="false" />
-                    <!-- Overlay transparan untuk cegah klik kanan & save -->
-                    <div style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 10;"></div>
+            <div class="flex items-center">
+                <a href="Index.html">
+                    <img src="assets/logo pesona white.png" alt="Pesona Transport Service logo" class="h-10 cursor-pointer" /> <!-- ukuran logo sedikit diperkecil juga -->
                 </a>
             </div>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="Index.html" class="hover:text-blue-300 transition-colors font-semibold">HOME</a>
-                <a href="About.html" class="hover:text-blue-300 transition-colors font-semibold">PROFILE</a>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center"> <!-- menambahkan items-center agar label sejajar tengah -->
+                <a href="Index.html" class="hover:text-blue-300 transition-colors font-semibold">Beranda</a>
+                <a href="About.html" class="hover:text-blue-300 transition-colors font-semibold">Tentang Kami</a>
+                <!-- Bagian menu PRODUCT dengan dropdown -->
                 <div class="relative group">
                     <a href="#" class="hover:text-blue-300 transition-colors font-semibold cursor-pointer flex items-center">
-                        SERVICE
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" 
-                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        Layanan
+                        <!-- Icon dropdown small -->
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </a>
+                    <!-- Dropdown menu -->
                     <div class="absolute hidden group-hover:block bg-red-800 text-white mt-1 rounded shadow-lg">
-                        <a href="big-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">BIG BUS</a>
-                        <a href="medium-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">MEDIUM BUS</a>
+                        <a href="big-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">Big Bus</a>
+                        <a href="medium-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">Medium Bus</a>
                     </div>
                 </div>
                 <a href="Reservasi.html" 
                    class="bg-white text-red-800 font-semibold rounded-full px-5 py-1 hover:bg-red-100 transition-colors cursor-pointer">
-                   RESERVATION
+                   RESERVASI
                 </a>
             </div>
+            <!-- Mobile Menu Button -->
             <div class="md:hidden">
-                <button class="mobile-menu-button">
+                <button id="mobile-menu-toggle" class="mobile-menu-button">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
     </div>
+    <!-- Mobile Menu (hidden by default, toggles on button click) -->
+    <div id="mobile-menu" class="md:hidden hidden bg-red-800 text-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out">
+        <div class="px-6 py-4 space-y-4">
+            <a href="Index.html" class="block py-2 hover:text-blue-300 transition-colors font-semibold border-b border-white">Beranda</a>
+            <a href="About.html" class="block py-2 hover:text-blue-300 transition-colors font-semibold border-b border-white">Tentang Kami</a>
+            <div class="space-y-0"> <!-- space-y-0 untuk kontrol spacing manual -->
+                <button id="service-toggle" class="w-full text-left py-2 hover:text-blue-300 transition-colors font-semibold border-b border-white flex justify-between items-center">
+                    Layanan
+                    <!-- Icon dropdown untuk SERVICE di mobile -->
+                    <svg id="service-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <!-- Sub-menu SERVICE (hidden by default) -->
+                <div id="service-submenu" class="hidden pl-6 space-y-2 overflow-hidden transition-all duration-300">
+                    <a href="big-bus.html" class="block py-2 hover:text-blue-300 transition-colors font-semibold border-b border-white text-sm">Big Bus</a>
+                    <a href="medium-bus.html" class="block py-2 hover:text-blue-300 transition-colors font-semibold border-b border-white text-sm">Medium Bus</a>
+                </div>
+            </div>
+            <!-- RESERVATION disamakan dengan item lain di mobile (tanpa background putih, sejajar) -->
+            <a href="Reservasi.html" 
+               class="block py-2 hover:text-blue-300 transition-colors font-semibold border-b border-white">
+               RESERVASI
+            </a>
+        </div>
+    </div>
 </nav>
+
+<script>
+// toggle mobile menu dan sub-menu SERVICE (mode mobile/portrait)
+// memastikan menu bisa dibuka/ditutup di layar kecil tanpa mengubah ukuran elemen
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const serviceToggle = document.getElementById('service-toggle');
+    const serviceSubmenu = document.getElementById('service-submenu');
+    const serviceIcon = document.getElementById('service-icon');
+
+    if (toggleButton && mobileMenu) {
+        toggleButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            // Optional: Ubah icon hamburger ke X saat terbuka
+            const icon = toggleButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars text-2xl';
+            } else {
+                icon.className = 'fas fa-times text-2xl';
+            }
+        });
+
+        // Tutup menu saat klik link (untuk UX mobile yang lebih baik)
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                const icon = toggleButton.querySelector('i');
+                icon.className = 'fas fa-bars text-2xl';
+            });
+        });
+
+        // Tutup menu saat resize ke desktop (opsional, untuk transisi smooth)
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) { // md breakpoint di Tailwind
+                mobileMenu.classList.add('hidden');
+                const icon = toggleButton.querySelector('i');
+                icon.className = 'fas fa-bars text-2xl';
+                // Reset sub-menu SERVICE
+                serviceSubmenu.classList.add('hidden');
+                serviceIcon.style.transform = 'rotate(0deg)';
+            }
+        });
+    }
+
+    // Toggle untuk sub-menu SERVICE di mobile
+    if (serviceToggle && serviceSubmenu && serviceIcon) {
+        serviceToggle.addEventListener('click', function() {
+            serviceSubmenu.classList.toggle('hidden');
+            // Rotasi icon untuk indikasi open/close (dari down ke up)
+            if (serviceSubmenu.classList.contains('hidden')) {
+                serviceIcon.style.transform = 'rotate(0deg)';
+            } else {
+                serviceIcon.style.transform = 'rotate(180deg)';
+            }
+        });
+    }
+});
+</script>
 
 <script>
     // Nonaktifkan klik kanan khusus pada gambar/logo
@@ -67,7 +154,7 @@
 </script>
 
 <!-- Kontak & Form Reservasi -->
-<section id="kontak" class="py-20 bg-grey text-black">
+<section id="kontak" class="py-20 bg-gray-100 text-black">
   <div class="container mx-auto px-6 max-w-lg">
     <h2 class="text-3xl font-bold mb-8 text-center">FORMULIR PEMESANAN</h2>
     <p class="text-gray-600">Silahkan isi dengan lengkap form dibawah ini!</p>
@@ -102,6 +189,11 @@
                class="w-full p-2 rounded text-black border border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500" />
       </div>
       <div>
+        <label for="jamPenjemputan" class="block mb-2 font-semibold">Jam Penjemputan</label>
+        <input type="time" id="jamPenjemputan" name="jamPenjemputan" required 
+               class="w-full p-2 rounded text-black border border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500" />
+      </div>
+      <div>
         <label for="penjemputan" class="block mb-2 font-semibold">Penjemputan</label>
         <input type="text" id="penjemputan" name="penjemputan" required 
                class="w-full p-2 rounded text-black border border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500" />
@@ -116,88 +208,106 @@
   </div>
 </section>
 
+<!--Footer-->
 <footer class="bg-red-800 text-white py-12 px-6">
-  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-12">
-    
-   <!-- Logo Pesona -->
-<div class="flex flex-col items-center space-y-2">
-  <img 
-    src="assets/logo pesona white.png" 
-    alt="Logo Pesona" 
-    class="h-14 max-w-[150px] object-contain" 
-    draggable="false" 
-    oncontextmenu="return false;"
-    >
-    <p class="text-white text-center-sm">
-  <a href="https://maps.app.goo.gl/Z8XAS8D6L1nQaSPm6" target="_blank" rel="noopener noreferrer" class="hover:underline text-white">
-    Ngijo, Kec. Gn. Pati, Kota Semarang, Jawa Tengah
-  </a>
-</p>
+  <div class="max-w-7xl mx-auto">
+    <!-- Grid untuk sections utama -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-8">
+      
+      <!-- Logo Pesona -->
+      <div class="flex flex-col items-center space-y-2 md:items-start">
+        <img 
+          src="assets/logo pesona white.png" 
+          alt="Logo Pesona" 
+          class="h-14 max-w-[150px] object-contain" 
+          draggable="false" 
+          oncontextmenu="return false;"
+          >
+        <p class="text-white text-center md:text-left text-sm">
+          <a href="https://maps.app.goo.gl/Z8XAS8D6L1nQaSPm6" target="_blank" rel="noopener noreferrer" class="hover:underline text-white">
+            Ngijo, Kec. Gn. Pati, Kota Semarang, Jawa Tengah
+          </a>
+        </p>
+      </div>
 
-</div>
-    <!-- Information -->
-    <div>
-      <h3 class="text-xl font-bold mb-6">INFORMATION</h3>
-      <ul class="space-y-3">
-        <li><a href="index.html" class="hover:underline text-white">Home</a></li>
-        <li><a href="about.html" class="hover:underline text-white">Profile</a></li>
-        <li><a href="product.html" class="hover:underline text-white">Service</a></li>
-        <li><a href="reservasi.html" class="hover:underline text-white">Reservation</a></li>
-      </ul>
-    </div>
+      <!-- Information -->
+      <div>
+        <h3 class="text-xl font-bold mb-6">INFORMASI</h3>
+        <ul class="space-y-3">
+          <li><a href="about.html" class="hover:underline text-white">Tentang Kami</a></li>
+          <li><a href="product.html" class="hover:underline text-white">Produk & Layanan</a></li>
+          <li><a href="reservasi.html" class="hover:underline text-white">Reservasi</a></li>
+        </ul>
+      </div>
 
-    <!-- About Us -->
-    <div>
-      <h3 class="text-xl font-bold mb-6">PROFILE</h3>
-      <ul class="space-y-3">
-        <li><a href="about.html" class="hover:underline text-white">About Pesona?</a></li>
-      </ul>
-    </div>
+      <!-- Layanan Kami -->
+      <div>
+        <h3 class="text-xl font-bold mb-6">LAYANAN KAMI</h3>
+        <ul class="space-y-3">
+          <li><a href="big-bus.html" class="hover:underline text-white">Big Bus</a></li>
+          <li><a href="medium-bus.html" class="hover:underline text-white">Medium Bus</a></li>
+        </ul>
+      </div>
 
-    <!-- Product -->
-    <div>
-      <h3 class="text-xl font-bold mb-6">SERVICE</h3>
-      <ul class="space-y-3">
-        <li><a href="big-bus.html" class="hover:underline text-white">Bigbus</a></li>
-        <li><a href="medium-bus.html" class="hover:underline text-white">Medium Bus</a></li>
-      </ul>
-    </div>
+      <!-- Hubungi Kami (dengan icon social media di bawah email) -->
+      <div>
+        <h3 class="text-xl font-bold mb-6">HUBUNGI KAMI</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center space-x-3">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/6285640014000" target="_blank" class="hover:underline text-white">0856-4001-4000</a>
+          </li>
+          <li class="flex items-center space-x-3">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:pesonatransportasi@gmail.com" class="hover:underline text-white">pesonatransportasi@gmail.com</a>
+          </li>
+        </ul>
+        <!-- Icon Social Media (horizontal bersebelahan, tepat di bawah email, tanpa space ekstra) -->
+        <ul class="flex space-x-6 align left-center mt-2">
+          <li>
+            <a href="https://instagram.com/buspesona" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 transition-colors">
+              <i class="fab fa-instagram text-3xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@buspesona" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 transition-colors">
+              <i class="fab fa-youtube text-3xl"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-    <!-- Social Media -->
-    <div>
-      <h3 class="text-xl font-bold mb-6">SOCIAL MEDIA</h3>
-      <ul class="space-y-3">
-        <li class="flex items-center space-x-3">
-          <i class="fab fa-whatsapp"></i>
-          <a href="https://wa.me/6285640014000" target="_blank" class="hover:underline text-white">0856-4001-4000</a>
-        </li>
-        <li class="flex items-center space-x-3">
-          <i class="fab fa-instagram"></i>
-          <a href="https://instagram.com/buspesona" target="_blank" class="hover:underline text-white">buspesona</a>
-        </li>
-        <li class="flex items-center space-x-3">
-            <i class="fab fa-youtube"></i>
-            <a href="https://www.youtube.com/@buspesona" target="_blank" class="hover:underline text-white">Bus Pesona</a>
-        </li>
-         <li class="flex items-center space-x-3">
-      <i class="fas fa-envelope"></i>
-      <span class="text-white">pesonatransportasi@gmail.com</span>
-    </li>
-      </ul>
     </div>
   </div>
-
-  
-
 </footer>
- <!-- Footer -->
+
+<!-- Copyright Footer -->
 <footer class="bg-gray-900 text-white py-4">
-    <div class="container mx-auto px-6 text-center text-gray-400 text-sm">
-        <p>© 2025 Bus Pesona. All rights reserved.</p>
-    </div>
+  <div class="container mx-auto px-6 text-align left text-gray-400 text-sm">
+    <p>© 2025 Bus Pesona. All rights reserved.</p>
+  </div>
 </footer>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Set minimum date to today for both start and end date inputs
+    const today = new Date().toISOString().split('T')[0];
+    const tanggalAwalInput = document.getElementById('tanggalAwal');
+    const tanggalSelesaiInput = document.getElementById('tanggalSelesai');
+
+    tanggalAwalInput.min = today;
+    tanggalSelesaiInput.min = today;
+
+    // Optional: Ensure end date is not before start date
+    tanggalAwalInput.addEventListener('change', function() {
+        if (this.value) {
+            tanggalSelesaiInput.min = this.value;
+        } else {
+            tanggalSelesaiInput.min = today;
+        }
+    });
+});
+
 function formatDateToDDMMYYYY(dateString) {
   const parts = dateString.split('-'); // ["YYYY", "MM", "DD"]
   if(parts.length !== 3) return dateString; // fallback jika format tidak sesuai
@@ -212,11 +322,18 @@ function submitForm(event) {
   const kebutuhanBus = document.getElementById('kebutuhanBus').value;
   const tanggalAwalRaw = document.getElementById('tanggalAwal').value;
   const tanggalSelesaiRaw = document.getElementById('tanggalSelesai').value;
+  const jamPenjemputan = document.getElementById('jamPenjemputan').value;
   const penjemputan = document.getElementById('penjemputan').value.trim();
   const tujuan = document.getElementById('tujuan').value.trim();
 
-  if (!nama || !nomor || !kebutuhanBus || !tanggalAwalRaw || !tanggalSelesaiRaw || !penjemputan || !tujuan) {
+  if (!nama || !nomor || !kebutuhanBus || !tanggalAwalRaw || !tanggalSelesaiRaw || !jamPenjemputan || !penjemputan || !tujuan) {
     alert('Mohon isi semua field dengan lengkap!');
+    return false;
+  }
+
+  // Validasi tambahan: Pastikan tanggal selesai tidak sebelum tanggal mulai
+  if (new Date(tanggalSelesaiRaw) < new Date(tanggalAwalRaw)) {
+    alert('Tanggal Selesai tidak boleh sebelum Tanggal Mulai!');
     return false;
   }
 
@@ -231,6 +348,7 @@ function submitForm(event) {
 *Kebutuhan Bus:* ${encodeURIComponent(kebutuhanBus)}%0A
 *Tanggal Mulai:* ${encodeURIComponent(tanggalAwal)}%0A
 *Tanggal Selesai:* ${encodeURIComponent(tanggalSelesai)}%0A
+*Jam Penjemputan:* ${encodeURIComponent(jamPenjemputan)}%0A
 *Penjemputan:* ${encodeURIComponent(penjemputan)}%0A
 *Tujuan:* ${encodeURIComponent(tujuan)}`;
 
@@ -240,24 +358,8 @@ function submitForm(event) {
 
   return false;
 }
-
-  // Mobile menu toggle (sesuai header Anda)
-  const mobileMenuButton = document.querySelector('.mobile-menu-button');
-  const navLinks = document.querySelector('.hidden.md\\:flex');
-
-  mobileMenuButton?.addEventListener('click', () => {
-    navLinks.classList.toggle('hidden');
-    navLinks.classList.toggle('flex');
-    navLinks.classList.toggle('flex-col');
-    navLinks.classList.toggle('absolute');
-    navLinks.classList.toggle('top-16');
-    navLinks.classList.toggle('left-0');
-    navLinks.classList.toggle('w-full');
-    navLinks.classList.toggle('bg-red-800');
-    navLinks.classList.toggle('p-4');
-    navLinks.classList.toggle('space-y-4');
-  });
 </script>
 
 </body>
 </html>
+

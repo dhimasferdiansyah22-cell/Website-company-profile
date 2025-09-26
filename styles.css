@@ -1,86 +1,9 @@
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
-    color: #ffffff;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+/* Custom styles dari inline CSS di HTML */
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-/* styles.css */
-.hero-section {
-    background-image: url('assets/PESONA JB5.png'); /* Ganti dengan path gambar Anda */
-    background-size: cover; /* Menyesuaikan ukuran gambar agar menutupi seluruh area */
-    background-position: center; /* Memusatkan gambar */
-    background-repeat: no-repeat; /* Mencegah pengulangan gambar */
-    color: white; /* Pastikan teks tetap terlihat di atas gambar */
-}
-
-
-.whatsapp-float:hover {
-    background-color: #128C7E;
-    transform: scale(1.1);
-}
-
-.bus-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.bus-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.hero-section {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://www.instagram.com/p/CngtKHEvi5_/?utm_source=ig_web_copy_link&igsh=MXQyNzV1NGQzY3h2ZA==');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-.carousel {
-    position: relative;
-    overflow: hidden;
-}
-
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.prev {
-    left: 8px;
-}
-
-.next {
-    right: 8px;
-}
-
-/* Mencegah seleksi teks */
-.noselect {
-    -webkit-user-select: none;  /* Safari */
-    -moz-user-select: none;     /* Firefox */
-    -ms-user-select: none;      /* Internet Explorer/Edge */
-    user-select: none;          /* Standard */
-}
+/* Tambahan: Jika diperlukan, Anda bisa menambahkan lebih banyak custom CSS di sini untuk override Tailwind atau styling tambahan. Saat ini, hanya style inline yang diekstrak. */

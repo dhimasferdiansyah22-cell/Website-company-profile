@@ -1,67 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesona Transport Service</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Pesona Transport Service - Index</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css"> <!-- Link ke file CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
- body {
+        /* Tambahan untuk smooth transition di mobile */
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+        }
+        #mobile-menu:not(.hidden) {
+            max-height: 500px; /* Sesuaikan dengan tinggi menu */
+        }
+        body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
-</style>
-
+ }
+    </style>
 </head>
-<body class="font-sans bg-gray-50">
-    <!-- Konten HTML Anda di sini -->
-    <script src="scripts.js"></script> <!-- Link ke file JavaScript -->
-</body>
-
+<body class="overflow-x-hidden"> 
 <!-- Navigation -->
 <nav class="bg-red-800 text-white shadow-lg fixed top-0 left-0 w-full z-50">
-    <div class="container mx-auto px-6 py-2"> <!-- Padding vertical dikurangi dari py-3 ke py-2 -->
+    <div class="container mx-auto px-6 py-2"> 
         <div class="flex justify-between items-center">
             <div class="flex items-center">
                 <a href="Index.html">
                     <img src="assets/logo pesona white.png" alt="Pesona Transport Service logo" class="h-10 cursor-pointer" /> <!-- ukuran logo sedikit diperkecil juga -->
                 </a>
             </div>
+            <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-8 items-center"> <!-- menambahkan items-center agar label sejajar tengah -->
-                <a href="Index.html" class="hover:text-blue-300 transition-colors font-semibold">HOME</a>
-                <a href="About.html" class="hover:text-blue-300 transition-colors font-semibold">PROFILE</a>
+                <a href="Index.html" class="hover:text-blue-300 transition-colors font-semibold">Beranda</a>
+                <a href="About.html" class="hover:text-blue-300 transition-colors font-semibold">Tentang Kami</a>
                 <!-- Bagian menu PRODUCT dengan dropdown -->
-<div class="relative group">
-    <a href="#" class="hover:text-blue-300 transition-colors font-semibold cursor-pointer flex items-center">
-        SERVICE
-        <!-- Icon dropdown small -->
-        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-        </svg>
-    </a>
-    <!-- Dropdown menu -->
-    <div class="absolute hidden group-hover:block bg-red-800 text-white mt-1 rounded shadow-lg">
-        <a href="big-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">BIG BUS</a>
-        <a href="medium-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">MEDIUM BUS</a>
-    </div>
-</div>
+                <div class="relative group">
+                    <a href="#" class="hover:text-blue-300 transition-colors font-semibold cursor-pointer flex items-center">
+                        Layanan
+                        <!-- Icon dropdown small -->
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <!-- Dropdown menu -->
+                    <div class="absolute hidden group-hover:block bg-red-800 text-white mt-1 rounded shadow-lg">
+                        <a href="big-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">Big Bus</a>
+                        <a href="medium-bus.html" class="block px-4 py-2 hover:bg-red-700 whitespace-no-wrap font-semibold">Medium Bus</a>
+                    </div>
+                </div>
                 <a href="Reservasi.html" 
                    class="bg-white text-red-800 font-semibold rounded-full px-5 py-1 hover:bg-red-100 transition-colors cursor-pointer">
-                   RESERVATION
+                   RESERVASI
                 </a>
             </div>
+            <!-- Mobile Menu Button -->
             <div class="md:hidden">
-                <button class="mobile-menu-button">
+                <button id="mobile-menu-toggle" class="mobile-menu-button">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
     </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-red-800 text-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out">
+        <div class="px-6 py-4 space-y-4">
+            <a href="Index.html" class="block py-2 hover:text-blue-300 transition-colors font-semibold border-b border-white">Beranda</a>
+            <a href="About.html" class="block py-2 hover:text-blue-300 transition-colors font-semibold border-b border-white">Tentang Kami</a>
+            <!-- SERVICE section untuk mobile: SERVICE sebagai item utama sejajar, sub-item dengan indentasi -->
+            <div class="space-y-0"> <!-- space-y-0 untuk kontrol spacing manual -->
+                <button id="service-toggle" class="w-full text-left py-2 hover:text-blue-300 transition-colors font-semibold border-b border-white flex justify-between items-center">
+                    Layanan
+                    <!-- Icon dropdown untuk SERVICE di mobile -->
+                    <svg id="service-icon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <!-- Sub-menu SERVICE (hidden by default) -->
+                <div id="service-submenu" class="hidden pl-6 space-y-2 overflow-hidden transition-all duration-300">
+                    <a href="big-bus.html" class="block py-2 hover:text-blue-300 transition-colors font-semibold border-b border-white text-sm">Big Bus</a>
+                    <a href="medium-bus.html" class="block py-2 hover:text-blue-300 transition-colors font-semibold border-b border-white text-sm">Medium Bus</a>
+                </div>
+            </div>
+            <a href="Reservasi.html" 
+               class="block py-2 hover:text-blue-300 transition-colors font-semibold border-b border-white">
+               RESERVASI
+            </a>
+        </div>
+    </div>
 </nav>
+
+<script>
+// toggle mobile menu dan sub-menu SERVICE (mode mobile/portrait)
+// memastikan menu bisa dibuka/ditutup di layar kecil tanpa mengubah ukuran elemen
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const serviceToggle = document.getElementById('service-toggle');
+    const serviceSubmenu = document.getElementById('service-submenu');
+    const serviceIcon = document.getElementById('service-icon');
+
+    if (toggleButton && mobileMenu) {
+        toggleButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            // Optional: Ubah icon hamburger ke X saat terbuka
+            const icon = toggleButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars text-2xl';
+            } else {
+                icon.className = 'fas fa-times text-2xl';
+            }
+        });
+
+        // Tutup menu saat klik link (untuk UX mobile yang lebih baik)
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                const icon = toggleButton.querySelector('i');
+                icon.className = 'fas fa-bars text-2xl';
+            });
+        });
+
+        // Tutup menu saat resize ke desktop (opsional, untuk transisi smooth)
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) { // md breakpoint di Tailwind
+                mobileMenu.classList.add('hidden');
+                const icon = toggleButton.querySelector('i');
+                icon.className = 'fas fa-bars text-2xl';
+                // Reset sub-menu SERVICE
+                serviceSubmenu.classList.add('hidden');
+                serviceIcon.style.transform = 'rotate(0deg)';
+            }
+        });
+    }
+
+    // Toggle untuk sub-menu SERVICE di mobile
+    if (serviceToggle && serviceSubmenu && serviceIcon) {
+        serviceToggle.addEventListener('click', function() {
+            serviceSubmenu.classList.toggle('hidden');
+            // Rotasi icon untuk indikasi open/close (dari down ke up)
+            if (serviceSubmenu.classList.contains('hidden')) {
+                serviceIcon.style.transform = 'rotate(0deg)';
+            } else {
+                serviceIcon.style.transform = 'rotate(180deg)';
+            }
+        });
+    }
+});
+</script>
 
 <script>
     // Nonaktifkan klik kanan khusus pada gambar/logo
@@ -70,85 +160,87 @@
         e.preventDefault();
     });
 </script>
-<!-- Hero Section -->
-<section id="home" class="hero-section text-white py-32 md:py-40 min-h-screen bg-cover bg-center" style="background-image: url('assets/crew\ update.png');">
-    <div class="container mx-auto px-6 text-center flex flex-col justify-center items-center">
+
+
+<!-- Hero Section dengan Efek Parallax Scroll -->
+<section id="home" class="hero-section text-white relative py-32 md:py-40 min-h-screen bg-cover bg-center bg-fixed overflow-hidden" style="background-image: url('assets/crew update.png');">
+    <!-- Overlay untuk readability jika background terlalu terang -->
+    <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
+    <div class="container mx-auto px-6 text-center flex flex-col justify-center items-center relative z-20">
         <p class="text-3xl md:text-5xl font-bold mb-8 leading-tight text-center max-w-4xl">
             PESONA TRANSPORT SERVICE
         </p>
         <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-center">
-            Melayani segala jenis perjalanan wisata, ziarah, study tour, dan berbagai keperluan perjalanan lainnya.
-            Sesuai dengan motto kami 100% commitment to zero accident, kami akan selalu berkomitmen untuk memberikan pelayanan yang terbaik kepada pelanggan kami. 
+            Menyediakan bus pariwisata yang andal untuk perjalanan liburan keluarga, study tour, hingga perjalanan rombongan. Kami percaya, perjalanan terbaik adalah perjalanan yang berjalan sesuai rencana.
         </p>
+        <a href="https://wa.me/6285640014000?text=Halo%20Pesona%20Transport%20Service%2C%20saya%20ingin%20order%20bus%20sekarang!" class="bg-red-800 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">Pesan Sekarang</a>
+    <!-- Elemen untuk parallax effect (akan dianimasikan via JS) -->
     </div>
 </section>
 
 <!-- About Section -->
-<section id="About Us" class="py-20 bg-white">
+<section id="About Us" class="py-20 bg-white relative z-0">
     <div class="container mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-red-800 mb-4">TENTANG KAMI</h2>
             <div class="w-20 h-1 bg-red-800 mx-auto"></div>
         </div>
         
-   <div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="grid md:grid-cols-2 gap-12 items-center">
     <div>
         <video 
             class="rounded-lg shadow-xl w-full h-auto" 
             autoplay 
             playsinline 
             loop 
+            preload="auto"  
             controls 
-            controlslist="nodownload nofullscreen noremoteplayback" 
-            disablepictureinpicture
+            controlslist="noremoteplayback" 
             oncontextmenu="return false;"
+            disablepictureinpicture  
         >
             <source src="assets/RESERVASI.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
-    <div>
-
+            <div>
                 <h3 class="text-2xl font-bold text-red-800 mb-6">Mengapa Memilih Bus Pesona?</h3>
-                <p class="text-gray-600 mb-6" style="text-align: justify;">
-                    Sejak tahun 2020, Bus Pesona menjadi pilihan utama untuk layanan sewa bus pariwisata di wilayah Jawa Tengah dan sekitarnya. 
-                    100% zero accident commitment merupakan motivasi tertinggi kami dari sebuah pelayanan.
-                </p>
+                <p class="text-gray-600 mb-6" style="text-align: justify;">Sejak tahun 2020, Pesona Transport Service menjadi pilihan utama untuk jasa bus pariwisata di Jawa Tengah dan sekitarnya. Komitmen tertinggi kami dalam setiap pelayanan adalah "100% commitment to zero accident", yang menjadi motivasi dan standar operasional kami.</p> 
                 <div class="space-y-4">
                     <div class="flex items-start">
-                        <div class="bg-red-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-shield-alt text-white-600"></i>
+                        <div class="bg-red-100 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-shield-alt text-black"></i> <!-- Fix warna icon -->
                         </div>
                         <div>
-                            <h4 class="font-semibold text-red-800">Safety First</h4>
-                            <p class="text-gray-600">Setiap perjalanan kami awali dengan pemeriksaan armada secara detail.</p>
+                            <h4 class="font-semibold text-red-800">Armada Terawat, Safety First</h4>
+                            <p class="text-gray-600">Dari awal berangkat hingga tiba di tujuan, kami memastikan setiap detail perjalananmu aman. Pemeriksaan bus dilakukan menyeluruh sebelum jalan.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
-                        <div class="bg-red-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-id-card text-white-600"></i>
+                        <div class="bg-red-100 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-id-card text-black"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-red-800">Kru Berpengalaman</h4>
-                            <p class="text-gray-600">Pengemudi & kru kami bersertifikat, mengutamakan keamanan penumpang.</p>
+                            <h3 class="font-semibold text-red-800">Kru Profesional</h3>
+                            <p class="text-gray-600">Pengemudi & kru Pesona dilatih dengan standar tinggi. Ramah, disiplin, dan selalu mengutamakan kenyamanan penumpang.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
-                        <div class="bg-red-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-star text-white-600"></i>
+                        <div class="bg-red-100 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-star text-black"></i>
                         </div>
                         <div>
                             <h4 class="font-semibold text-red-800">100% Zero Accident Commitment</h4>
-                            <p class="text-gray-600">Perjalanan lebih tenang dan nyaman bersama Pesona Transport Service.</p>
+                            <p class="text-gray-600">Semua armada kami selalu siap menghadirkan pengalaman zero accident. Disetiap perjalananmu akan terasa nyaman, aman, dan bebas khawatir.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
-                        <div class="bg-red-100 p-3 rounded-full mr-4">
-                            <i class="fas fa-phone text-white-600"></i>
+                        <div class="bg-red-100 p-3 rounded-full mr-4 flex-shrink-0">
+                            <i class="fas fa-phone text-black"></i>
                         </div>
                         <div>
                             <h4 class="font-semibold text-red-800">Booking lebih mudah dan cepat</h4>
-                            <p class="text-gray-600">Pemesanan lebih mudah, cepat dan praktis.</p>
+                            <p class="text-gray-600">Pemesanan lebih mudah, cepat dan praktis. Tim kami siap membantu kapan saja.</p>
                         </div>
                     </div>
                 </div>
@@ -162,16 +254,15 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-red-800 mb-4">LAYANAN KAMI</h2>
-                <p class="text-gray-600">Pesona Transport Service menyediakan transportasi sewa bus pariwisata Big Bus dan Medium Bus</p>
-                <p class="text-gray-600">Menggunakan body Legacy Sky SR3 Laksana keluaran tahun terbaru dengan menggunakan sasis Hino & Mercedes-Benz.</p>
-                <p class="text-gray-600">Kami melayani untuk overland Jawa – Bali, Ziarah Wali, Study Tour, dan City Tour.</p>
+                <p class="text-gray-600">Tersedia pilihan Big Bus dan Medium Bus yang nyaman untuk mendukung aktivitas perjalanan grup Anda</p>
+                <p class="text-gray-600">Layanan kami Overland Jawa-Bali, Ziarah Wali, Study Tour, Perjalanan Dinas & Acara Group</p>
                 <div class="w-20 h-1 bg-red-800 mx-auto mt-4"></div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+<div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
 <!-- Bus 1 -->
-<div class="bus-card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="bus-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-xl">
     <div class="bus-image">
-        <a href="big-bus.html">
             <img src="assets/SR3 Pano.png" 
             class="w-full h-48 object-cover"
             draggable="false" 
@@ -182,24 +273,32 @@
         <h3 class="text-xl font-bold text-red-800 mb-2">Big Bus</h3>
         <p class="text-gray-600 mb-4">Kapasitas maksimal 50 penumpang, reclining seat, dispenser, dan entertainment system</p>
         <div class="flex justify-between items-center">
+            <div></div> <!-- Placeholder kosong di kiri untuk justify-between -->
+            <a href="big-bus.html" class="bg-red-800 text-white px-4 py-2 rounded-lg hover:bg-red-900 transition-colors text-sm font-medium">
+                Klik Selengkapnya
+            </a>
         </div>
     </div>
 </div>
 
-<!-- Bus 3 -->
-<div class="bus-card bg-white rounded-lg shadow-md overflow-hidden">
+<!-- Bus 2 -->
+<div class="bus-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 active:scale-95 active:shadow-xl">
     <div class="bus-image">
-        <a href="medium-bus.html">
             <img src="assets/MEDIUM.png" class="w-full h-48 object-cover" draggable="false" oncontextmenu="return false;">
         </a>
     </div>
     <div class="p-6">
         <h3 class="text-xl font-bold text-red-800 mb-2">Medium Bus</h3>
-        <p class="text-gray-600 mb-4">Kapasitas maksimal 35 penumpang dengan reclining seat, dan entertainment system</p>        
+        <p class="text-gray-600 mb-4">Kapasitas maksimal 35 penumpang, reclining seat, dan entertainment system</p>        
+       <div class="flex justify-between items-center">
+            <div></div> <!-- Placeholder kosong di kiri untuk justify-between -->
+            <a href="medium-bus.html" class="bg-red-800 text-white px-4 py-2 rounded-lg hover:bg-red-900 transition-colors text-sm font-medium">
+                Klik Selengkapnya
+            </a>
         </div>
     </div>
 </div>
-    </section>
+</section>
 
 <!-- Testimoni Section -->
 <section id="Testimonials" class="py-16 bg-white">
@@ -248,125 +347,95 @@
 
 <!--Footer-->
 <footer class="bg-red-800 text-white py-12 px-6">
-  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-12">
-    
-   <!-- Logo Pesona -->
-<div class="flex flex-col items-center space-y-2">
-  <img 
-    src="assets/logo pesona white.png" 
-    alt="Logo Pesona" 
-    class="h-14 max-w-[150px] object-contain" 
-    draggable="false" 
-    oncontextmenu="return false;"
-    >
-    <p class="text-white text-center-sm">
-  <a href="https://maps.app.goo.gl/Z8XAS8D6L1nQaSPm6" target="_blank" rel="noopener noreferrer" class="hover:underline text-white">
-    Ngijo, Kec. Gn. Pati, Kota Semarang, Jawa Tengah
-  </a>
-</p>
+  <div class="max-w-7xl mx-auto">
+    <!-- Grid untuk sections utama -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-8">
+      
+      <!-- Logo Pesona -->
+      <div class="flex flex-col items-center space-y-2 md:items-start">
+        <img 
+          src="assets/logo pesona white.png" 
+          alt="Logo Pesona" 
+          class="h-14 max-w-[150px] object-contain" 
+          draggable="false" 
+          oncontextmenu="return false;"
+          >
+        <p class="text-white text-center md:text-left text-sm">
+          <a href="https://maps.app.goo.gl/Z8XAS8D6L1nQaSPm6" target="_blank" rel="noopener noreferrer" class="hover:underline text-white">
+            Ngijo, Kec. Gn. Pati, Kota Semarang, Jawa Tengah
+          </a>
+        </p>
+      </div>
 
-</div>
-    <!-- Information -->
-    <div>
-      <h3 class="text-xl font-bold mb-6">INFORMATION</h3>
-      <ul class="space-y-3">
-        <li><a href="index.html" class="hover:underline text-white">Home</a></li>
-        <li><a href="about.html" class="hover:underline text-white">Profile</a></li>
-        <li><a href="product.html" class="hover:underline text-white">Service</a></li>
-        <li><a href="reservasi.html" class="hover:underline text-white">Reservation</a></li>
-      </ul>
-    </div>
+      <!-- Information -->
+      <div>
+        <h3 class="text-xl font-bold mb-6">INFORMASI</h3>
+        <ul class="space-y-3">
+          <li><a href="about.html" class="hover:underline text-white">Tentang Kami</a></li>
+          <li><a href="product.html" class="hover:underline text-white">Produk & Layanan</a></li>
+          <li><a href="reservasi.html" class="hover:underline text-white">Reservasi</a></li>
+        </ul>
+      </div>
 
-    <!-- About Us -->
-    <div>
-      <h3 class="text-xl font-bold mb-6">PRFOILE</h3>
-      <ul class="space-y-3">
-        <li><a href="about.html" class="hover:underline text-white">About Pesona</a></li>
-      </ul>
-    </div>
+      <!-- Layanan Kami -->
+      <div>
+        <h3 class="text-xl font-bold mb-6">LAYANAN KAMI</h3>
+        <ul class="space-y-3">
+          <li><a href="big-bus.html" class="hover:underline text-white">Big Bus</a></li>
+          <li><a href="medium-bus.html" class="hover:underline text-white">Medium Bus</a></li>
+        </ul>
+      </div>
 
-    <!-- Product -->
-    <div>
-      <h3 class="text-xl font-bold mb-6">SERVICE</h3>
-      <ul class="space-y-3">
-        <li><a href="big-bus.html" class="hover:underline text-white">Bigbus</a></li>
-        <li><a href="medium-bus.html" class="hover:underline text-white">Medium Bus</a></li>
-      </ul>
-    </div>
+      <!-- Hubungi Kami (dengan icon social media di bawah email) -->
+      <div>
+        <h3 class="text-xl font-bold mb-6">HUBUNGI KAMI</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center space-x-3">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/6285640014000" target="_blank" class="hover:underline text-white">0856-4001-4000</a>
+          </li>
+          <li class="flex items-center space-x-3">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:pesonatransportasi@gmail.com" class="hover:underline text-white">pesonatransportasi@gmail.com</a>
+          </li>
+        </ul>
+        <!-- Icon Social Media (horizontal bersebelahan, tepat di bawah email, tanpa space ekstra) -->
+        <ul class="flex space-x-6 align left-center mt-2">
+          <li>
+            <a href="https://instagram.com/buspesona" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 transition-colors">
+              <i class="fab fa-instagram text-3xl"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@buspesona" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 transition-colors">
+              <i class="fab fa-youtube text-3xl"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
 
-    <!-- Social Media -->
-    <div>
-      <h3 class="text-xl font-bold mb-6">SOCIAL MEDIA</h3>
-      <ul class="space-y-3">
-        <li class="flex items-center space-x-3">
-          <i class="fab fa-whatsapp"></i>
-          <a href="https://wa.me/6285640014000" target="_blank" class="hover:underline text-white">0856-4001-4000</a>
-        </li>
-        <li class="flex items-center space-x-3">
-          <i class="fab fa-instagram"></i>
-          <a href="https://instagram.com/buspesona" target="_blank" class="hover:underline text-white">buspesona</a>
-        </li>
-        <li class="flex items-center space-x-3">
-            <i class="fab fa-youtube"></i>
-            <a href="https://www.youtube.com/@buspesona" target="_blank" class="hover:underline text-white">Bus Pesona</a>
-        </li>
-         <li class="flex items-center space-x-3">
-      <i class="fas fa-envelope"></i>
-      <span class="text-white">pesonatransportasi@gmail.com</span>
-    </li>
-      </ul>
     </div>
   </div>
-
 </footer>
- <!-- Footer -->
+
+<!-- Copyright Footer -->
 <footer class="bg-gray-900 text-white py-4">
-    <div class="container mx-auto px-6 text-center text-gray-400 text-sm">
-        <p>© 2025 Bus Pesona. All rights reserved.</p>
-    </div>
+  <div class="container mx-auto px-6 text-align left text-gray-400 text-sm">
+    <p>© 2025 Bus Pesona. All rights reserved.</p>
+  </div>
 </footer>
 
- <!-- WhatsApp Float Button - Order Now! (Diperkecil dengan Efek Shadow) -->
+
+ <!-- WhatsApp Float Button - Order Now! (Diperbesar dengan Efek Shadow) -->
 <a href="https://wa.me/6285640014000?text=Halo%20Pesona%20Transport%20Service%2C%20saya%20ingin%20order%20bus%20sekarang!" 
    target="_blank" 
    rel="noopener noreferrer" 
-   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-lg shadow-md z-50 transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 active:shadow-2xl flex items-center space-x-1 md:bottom-4 md:right-4 md:px-4 md:py-2 cursor-pointer"
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg shadow-md z-50 transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 active:shadow-2xl flex items-center space-x-2 md:bottom-4 md:right-4 md:px-6 md:py-4 cursor-pointer"
    title="Order Now via WhatsApp">
-  <i class="fab fa-whatsapp text-base md:text-lg"></i>
-  <span class="font-semibold text-xs md:text-sm hidden sm:inline">Order Now!</span>
+  <i class="fab fa-whatsapp text-lg md:text-xl"></i>
+  <span class="font-semibold text-sm md:text-base hidden sm:inline">Order Now!</span>
 </a>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Mobile menu functionality
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const navLinks = document.querySelector('.hidden.md\\:flex');
-        mobileMenuButton?.addEventListener('click', () => {
-            navLinks.classList.toggle('hidden');
-            navLinks.classList.toggle('flex');
-            navLinks.classList.toggle('flex-col');
-            navLinks.classList.toggle('absolute');
-            navLinks.classList.toggle('top-16');
-            navLinks.classList.toggle('left-0');
-            navLinks.classList.toggle('w-full');
-            navLinks.classList.toggle('bg-red-800');
-            navLinks.classList.toggle('p-4');
-            navLinks.classList.toggle('space-y-4');
-        });
-    </script>
 </body>
 </html>
 
